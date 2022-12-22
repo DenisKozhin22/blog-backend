@@ -11,6 +11,9 @@ import cors from 'cors'
 
 mongoose
 	.connect(process.env.MONGODB_URL)
+	// .connect(
+	// 	'mongodb+srv://admin:DK22092002@cluster0.td2fcmq.mongodb.net/blog?retryWrites=true&w=majority',
+	// )
 	.then(() => {
 		console.log('DB OK')
 	})

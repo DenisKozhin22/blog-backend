@@ -85,7 +85,8 @@ export const getPostsByTag = async (req, res) => {
 
 export const getAllDesc = async (req, res) => {
 	try {
-		const posts = await PostModel.find().sort({ viewsCount: 'desc' })
+		const posts = await PostModel.find().sort({ viewsCount: 'desc' }).populate('user').exec()
+		console.log(posts)
 		res.json(posts)
 	} catch (error) {
 		console.log(error)
